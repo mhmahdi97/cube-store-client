@@ -9,12 +9,13 @@ const Blogs = () => {
         .then(res => res.json())
         .then (data => setQuestions(data))
     }, [])
-    console.log(questions)
+
     return (
         <div>
              {
                 questions.map(question => <Questions
                 question = {question}
+                key={question.id}
                 ></Questions>)
             }
         </div>
