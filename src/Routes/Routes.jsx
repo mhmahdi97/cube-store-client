@@ -10,11 +10,6 @@ import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/404/ErrorPage";
 
 
-
-
-
-
-
 const router = createBrowserRouter([
     {
         path: '/',
