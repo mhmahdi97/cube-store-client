@@ -18,7 +18,7 @@ const Navbar = () => {
         <li> <NavLink to="/blogs">Blogs</NavLink> </li>
         { user?.email ?  <>
             <li><NavLink to="/bookings">My Bookings</NavLink></li>
-            <li><button onClick={handleLogOut}>Log out</button></li>
+            <li><button>Log out</button></li>
         </> 
         : <li> <NavLink to="/login">Login</NavLink> </li>
        }
@@ -41,7 +41,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-center hidden ml-28 lg:flex">
-                <ul className="menu menu-horizontal text-lg font-medium space-x-3 px-1">
+                <ul className="menu menu-horizontal text-lg font-medium space-x-1 px-1">
                     {navItems}
                 </ul>
             </div>
