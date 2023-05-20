@@ -87,10 +87,10 @@ const Login = () => {
                         <input type="password" name="password" placeholder="Enter Your Password" className="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
                         <p className='text-red-600 text-lg'>{error}</p> 
                     </div>
-                    <button className="text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
+                    <button className="text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Login</button>
                 </form>
                 <p className="text-xs text-gray-500 mt-3">
-                Dont Have Account? Please <Link to="/register" className=" text-blue-600">Register</Link>
+                    Dont Have Account? Please <Link to="/register" className=" text-blue-600">Register</Link>
                 </p>
 
                  <div className='mt-6 text-center'>
@@ -98,13 +98,6 @@ const Login = () => {
                 </div>
             
             </div>
-
-           
-
-            {/* <div className="container px-5 py-24 mx-auto flex flex-wrap content-center items-center">
-                
-                
-            </div> */}
 
         </div>
     );
