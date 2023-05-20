@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import erroImage from '../../assets/404.png';
 
 const ErrorPage = () => {
 
@@ -11,7 +12,7 @@ const ErrorPage = () => {
              <div >
                 
                 <div>
-                    <img src="https://lh6.googleusercontent.com/Bu-pRqU_tWZV7O3rJ5nV1P6NjqFnnAs8kVLC5VGz_Kf7ws0nDUXoGTc7pP87tyUCfu8VyXi0YviIm7CxAISDr2lJSwWwXQxxz98qxVfMcKTJfLPqbcfhn-QEeOowjrlwX1LYDFJN" alt="" />
+                    <img src={erroImage} alt="" />
                 </div>
                 <div className='flex justify-center'>
                     <Link to='/'>
