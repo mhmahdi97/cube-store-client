@@ -2,23 +2,31 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthContextProvider';
 import logo from '../../assets/logo/cube-store-logo-black.png';
+import avatar from '../../assets/avatar.png';
 
 
 
 const Navbar = () => {
+    
+    const {user, logOut} = useContext(AuthContext);
 
-    const {user} = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+        .then(() =>{})
+        .catch( error => console.log(error))
+    }
 
 
     const navItems = <>
         <li><NavLink to="/">Home</NavLink> </li>
         <li> <NavLink to="/all-cubes">All Cubes</NavLink> </li>
-        <li> <NavLink to="/my-cubes">My Cubes</NavLink> </li>
-        <li> <NavLink to="/add-cube">Add a Cube</NavLink> </li>
+        
+        
         <li> <NavLink to="/blogs">Blogs</NavLink> </li>
-        { user?.email ?  <>
-            <li><NavLink to="/bookings">My Bookings</NavLink></li>
-            <li><button>Log out</button></li>
+        { user?  <>
+            <li> <NavLink to="/my-cubes">My Cubes</NavLink> </li>
+            <li> <NavLink to="/add-cube">Add a Cube</NavLink> </li>
+            <li><button onClick={handleLogOut}>Log out</button></li>
         </> 
         : <li> <NavLink to="/login">Login</NavLink> </li>
        }
@@ -46,11 +54,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end mr-20">
-                <div className="avatar tooltip tooltip-left" data-tip='User'>
-                    <div className="w-12 rounded-full">
-                        <img src="https://scontent.fdac155-1.fna.fbcdn.net/v/t1.6435-9/164103735_3890250934401286_934264293924961525_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_eui2=AeErpvK8twxvlulcXTR656LRbhSuf9LD7hFuFK5_0sPuEZbq457t8aL6Zyzr7nbINTy2z5m4okizc2YZQegTGKH7&_nc_ohc=LZM_adfnIxgAX9KaCgE&_nc_ht=scontent.fdac155-1.fna&oh=00_AfBxyVXu8I5oGZuakogL2IsbxDGsT7s27HzuwWAGhJqRMQ&oe=649007DB" />
-                    </div>
-                </div>
+                {
+                    user && <>
+                        <div className="avatar tooltip tooltip-left" data-tip={user?.displayName ? user.displayName : 'User Name'}>
+                            <div className="w-12 rounded-full">
+                                <img src={user?.photoURL ? user.photoURL : avatar} />
+                            </div>
+                        </div>
+                    </>
+                }
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ const Login = () => {
     const [error, setError] = useState('');
 
 
-    const { auth, signIn } = useContext(AuthContext);
+    const { auth, user, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
@@ -38,17 +38,15 @@ const Login = () => {
                 // setError(error.message)
                 // setError(error.message === 'Firebase: Error (auth/configuration-not-found).' ? 'Account Not Found' : error.message === 'auth/user-not-found' ? 'Account Not Found' : '');
 
-                if(error.message === 'auth/wrong-password') {
-                setError('You Have Entered a Wrong Password')
+                if(error.message === 'Firebase: Error (auth/wrong-password).') {
+                setError('You Have Entered a Wrong Password!!!')
                 console.log(error)
             }
-                else if (error.message === 'Firebase: Error (auth/configuration-not-found).') {
-                    setError('Account Not Found')
+                else if (error.message === 'Firebase: Error (auth/configuration-not-found).' ||'Firebase: Error (auth/user-not-found).') {
+                    setError('Account Not Found!!!')
                     console.log(error)
                 }
             })
-
-            console.log(error)
 
             // if (error.message === 'auth/wrong-password') {
             //     setError('You Have Entered a Wrong Password')
@@ -71,6 +69,7 @@ const Login = () => {
                 })
             }
 
+          
 
     return (
         <div className="text-gray-600 body-font">
@@ -85,7 +84,7 @@ const Login = () => {
                     <div className="relative mb-4">
                         <label className="leading-7 text-sm text-gray-600">Password</label>
                         <input type="password" name="password" placeholder="Enter Your Password" className="w-full bg-white rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
-                        <p className='text-red-600 text-lg'>{error}</p> 
+                        <p className='text-red-600 text-lg mt-2'>{error}</p> 
                     </div>
                     <button className="text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Login</button>
                 </form>
@@ -95,6 +94,7 @@ const Login = () => {
 
                  <div className='mt-6 text-center'>
                     <button onClick={handleGoogleSignIn} className=" bg-stone-500 hover:bg-stone-600 px-4 py-2 rounded-md text-white font-semibold text-center">Sign-In with Google <FaGoogle /> </button>
+                    
                 </div>
             
             </div>
