@@ -14,7 +14,6 @@ const Login = () => {
     const { auth, user, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
 
 
@@ -35,16 +34,12 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error);
-                // setError(error.message)
-                // setError(error.message === 'Firebase: Error (auth/configuration-not-found).' ? 'Account Not Found' : error.message === 'auth/user-not-found' ? 'Account Not Found' : '');
-
                 if(error.message === 'Firebase: Error (auth/wrong-password).') {
                 setError('You Have Entered a Wrong Password!!!')
-                console.log(error)
+                
             }
                 else if (error.message === 'Firebase: Error (auth/configuration-not-found).' ||'Firebase: Error (auth/user-not-found).') {
                     setError('Account Not Found!!!')
-                    console.log(error)
                 }
             })
 
@@ -62,7 +57,6 @@ const Login = () => {
                 .then(result => {
                     const googleUser = result.user;
                     console.log(googleUser);
-                    navigate(from, { replace: true })
                 })
                 .catch(error => {
                     console.log(error)

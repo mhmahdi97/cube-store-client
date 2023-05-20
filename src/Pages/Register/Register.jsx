@@ -34,21 +34,34 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                updateProfile(auth.currentUser, {
+                displayName: name , photoURL: photo
+                })
+                .then(() => {
+                    
+                })
+                .catch((error) => {
+                    console.log(error)          
+                })
                 navigate('/')   
+           
+            
             })
             .catch(error => {
                 console.log(error);
-                setError(error.message);
+                if(error.message === 'Firebase: Error (auth/email-already-in-use).') {
+                    setError('This Email is Already in Use!!!')
+                }
             })
             
             updateProfile(auth.currentUser, {
-                displayName: {name} , photoURL: {photo}
+                displayName: name , photoURL: photo
             })
             .then(() => {
                 
             })
             .catch((error) => {
-                console.log(error.message)
+                console.log(error)          
             })
             
             if (createUser) {
