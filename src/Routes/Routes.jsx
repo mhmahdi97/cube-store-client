@@ -39,11 +39,11 @@ const router = createBrowserRouter([
                 path: '/add-cube',
                 element: <AddACube></AddACube>
             },
-            {
-                path: '/blogs',
-                element: <Blogs></Blogs>
-            }
         ]
+    },
+    {
+        path: '/blogs',
+        element: <Blogs></Blogs>
     },
     {
         path: '*',
