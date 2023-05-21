@@ -8,6 +8,7 @@ import MyCubes from "../Pages/MyCubes/MyCubes";
 import AddACube from "../Pages/AddACube/AddACube";
 import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/404/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -33,11 +34,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-cubes',
-                element: <MyCubes></MyCubes>
+                element: <PrivateRoutes> <MyCubes></MyCubes> </PrivateRoutes>
             },
             {
                 path: '/add-cube',
-                element: <AddACube></AddACube>
+                element: <PrivateRoutes> <AddACube></AddACube> </PrivateRoutes>
             },
         ]
     },

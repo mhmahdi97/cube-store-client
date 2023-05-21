@@ -39,6 +39,7 @@ const AuthContextProvider = ({children}) => {
         auth,
         user,
         loading,
+        setLoading,
         createUser, 
         signIn, 
         logOut

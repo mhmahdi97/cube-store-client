@@ -11,7 +11,7 @@ const Login = () => {
     const [error, setError] = useState('');
 
 
-    const { auth, user, signIn } = useContext(AuthContext);
+    const { auth, signIn, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -43,13 +43,9 @@ const Login = () => {
                 }
             })
 
-            // if (error.message === 'auth/wrong-password') {
-            //     setError('You Have Entered a Wrong Password')
-            //     console.log(error)
-            // }
     }
 
-    // const auth = getAuth(app);
+   
     const googleProvider = new GoogleAuthProvider;
 
     const handleGoogleSignIn = () => {
@@ -57,6 +53,7 @@ const Login = () => {
                 .then(result => {
                     const googleUser = result.user;
                     console.log(googleUser);
+                    setLoading(true)
                 })
                 .catch(error => {
                     console.log(error)
