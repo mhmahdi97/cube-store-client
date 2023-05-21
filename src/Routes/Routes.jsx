@@ -9,6 +9,7 @@ import AddACube from "../Pages/AddACube/AddACube";
 import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/404/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
+import CubeDetails from "../Pages/AllCubes/CubeDetails";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
                 path: '/all-cubes',
                 element: <AllCubes></AllCubes>,
                 loader: () => fetch('http://localhost:5000/cubes')
+            },
+            {
+                path: '/cubes/:id',
+                element: <PrivateRoutes><CubeDetails></CubeDetails></PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/cubes/${params.id}`)
             },
             {
                 path: '/my-cubes',

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CubeCard = ({cube}) => {
+const AllCubesTable = ({cube}) => {
 
     console.log(cube)
-    const {cubeName, cubeImage1, category, price, quantity} = cube;
+    const {cubeName, cubeImage1, category, price, quantity, _id} = cube;
 
 
 
@@ -22,10 +23,10 @@ const CubeCard = ({cube}) => {
             <td className='text-center'>{price} BDT</td>
             <td className='text-center'>{quantity}</td>
             <td className='text-center'></td>
-            <td className='text-center'> <button className='bg-gray-500 px-2 py-1 rounded-md text-white'>View Details</button> </td>
+            <td className='text-center'> <Link to={`/cubes/${_id}`}><button className='bg-gray-500 px-2 py-1 rounded-md text-white'>View Details</button></Link> </td>
         
         </tr>
 );
 };
 
-export default CubeCard;
+export default AllCubesTable;

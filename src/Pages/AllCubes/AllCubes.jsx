@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { useLoaderData } from 'react-router-dom';
-import CubeCard from './CubeCard';
+import AllCubesTable from './AllCubesTable';
 
 const AllCubes = () => {
     useTitle('Cube Store | All Cubes')
@@ -28,10 +28,10 @@ const AllCubes = () => {
                     </thead>
                     <tbody>
                     {
-                        cubes.map(cube => <CubeCard
+                        cubes.map(cube => <AllCubesTable
                             key={cube._id}
                             cube={cube}
-                        ></CubeCard>)
+                        ></AllCubesTable> )
                     }
                 </tbody>
 
