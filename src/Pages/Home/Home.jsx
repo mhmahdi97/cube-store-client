@@ -1,7 +1,9 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
 import Gallery from './Gallery';
-import Hero from './Hero';
+import Banner from './Banner';
+import CustomerReview from './CustomerReview';
+import ContactUs from './ContactUs';
 
 const Home = () => {
 
@@ -9,8 +11,10 @@ const Home = () => {
 
     return (
         <div>
-            <Hero></Hero>
+            <Banner></Banner>
             <Gallery></Gallery>
+            <CustomerReview></CustomerReview>
+            <ContactUs></ContactUs>
         </div>
     );
 };

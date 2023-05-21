@@ -30,7 +30,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-cubes',
-                element: <AllCubes></AllCubes>
+                element: <AllCubes></AllCubes>,
+                loader: () => fetch('http://localhost:5000/cubes')
             },
             {
                 path: '/my-cubes',

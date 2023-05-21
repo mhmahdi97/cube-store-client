@@ -26,7 +26,7 @@ const Gallery = () => {
                         <img alt="gallery" className="w-full object-cover h-full object-center block opacity-50 absolute inset-0" src={cube2} />
                         <div className="text-center relative z-10 w-full">
                         <h2 className="text-xl text-gray-900 font-medium title-font mb-2">YuXin Little Magic 3x3x3 Cube - Stickerless 2021</h2>
-                        <a className="mt-3 text-red-800 inline-flex items-center">Learn More
+                        <a className="mt-3 text-red-800 inline-flex items-center">See Details
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
@@ -39,7 +39,7 @@ const Gallery = () => {
                         <img alt="gallery" className="w-full object-cover h-full object-center block opacity-50 absolute inset-0" src={cube3} />
                         <div className="text-center relative z-10 w-full">
                         <h2 className="text-xl text-gray-900 font-medium title-font mb-2">Meilong M 3x3</h2>
-                        <a className="mt-3 text-red-800 inline-flex items-center">Learn More
+                        <a className="mt-3 text-red-800 inline-flex items-center">See Details
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
