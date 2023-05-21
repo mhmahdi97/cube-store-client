@@ -49,16 +49,16 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider;
 
     const handleGoogleSignIn = () => {
-                signInWithPopup(auth, googleProvider)
-                .then(result => {
-                    const googleUser = result.user;
-                    console.log(googleUser);
-                    setLoading(true)
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-            }
+        setLoading(true);
+        signInWithPopup(auth, googleProvider)
+        .then(result => {
+            const googleUser = result.user;
+            console.log(googleUser);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
 
           
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import Gallery from './Gallery';
 
 const Home = () => {
 
@@ -7,7 +8,7 @@ const Home = () => {
 
     return (
         <div>
-            
+            <Gallery></Gallery>
         </div>
     );
 };
