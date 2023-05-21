@@ -4,6 +4,7 @@ import Gallery from './Gallery';
 import Banner from './Banner';
 import CustomerReview from './CustomerReview';
 import ContactUs from './ContactUs';
+import CategoryTab from './CategoryTab';
 
 const Home = () => {
 
@@ -13,6 +14,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Gallery></Gallery>
+            <CategoryTab></CategoryTab>
             <CustomerReview></CustomerReview>
             <ContactUs></ContactUs>
         </div>
