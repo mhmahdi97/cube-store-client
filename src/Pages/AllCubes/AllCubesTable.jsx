@@ -22,7 +22,7 @@ const AllCubesTable = ({cube}) => {
             <td>
                 <div className="avatar">
                     <div className="rounded w-24 h-24">
-                        {cubeImage1 && <img src={cubeImage1} alt="" />}
+                        {cubeImage1 && <img src={cubeImage1} alt="Cubes Image" />}
                     </div>
                 </div>
             </td>

@@ -5,7 +5,7 @@ const CubeDetails = () => {
 
     const cubeData = useLoaderData();
     console.log(cubeData)
-    const {cubeName, cubeImage2, ratings, description, sellerName, sellerEmail, category, price, quantity, _id} = cubeData;
+    const {cubeName, cubeImage2, ratings, description, sellerName, sellerEmail, price, quantity} = cubeData;
 
     return (
        <section className="text-gray-600 body-font overflow-hidden">

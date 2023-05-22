@@ -24,7 +24,7 @@ const Navbar = () => {
         { user && <>
             <li> <NavLink to="/my-cubes">My Cubes</NavLink> </li>
             <li> <NavLink to="/add-cube">Add a Cube</NavLink> </li>
-            <li><button onClick={handleLogOut}>Log out</button></li>
+             <button className='bg-gray-500 px-3 py-2 rounded-md text-white font-semibold md:mr-8' onClick={handleLogOut}>Log out</button>
         </> 
         
        }
@@ -32,6 +32,9 @@ const Navbar = () => {
     </>
     return (
         <div className="navbar h-28 mb-4">
+
+
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,14 +50,21 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
+
+
+
             <div className="navbar-center hidden ml-28 lg:flex">
                 <ul className="menu menu-horizontal text-lg font-medium space-x-1 px-1">
                     {navItems}
                 </ul>
             </div>
+
+
+
             <div className="navbar-end mr-20">
                 {
                     user ? <>
+                       
                         <div className="avatar tooltip tooltip-left" data-tip={user?.displayName ? user.displayName : 'User Name'}>
                             <div className="w-12 rounded-full">
                                 <img src={user?.photoURL ? user.photoURL : avatar} />
@@ -64,6 +74,9 @@ const Navbar = () => {
                     :  <Link to="/login"> <button className='bg-gray-500 px-3 py-2 rounded-md text-white font-semibold'>Login</button> </Link> 
                 }
             </div>
+
+
+            
         </div>
     );
 };

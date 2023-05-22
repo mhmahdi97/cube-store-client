@@ -47,11 +47,11 @@ const router = createBrowserRouter([
                 path: '/add-cube',
                 element: <PrivateRoutes> <AddACube></AddACube> </PrivateRoutes>
             },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+            },
         ]
-    },
-    {
-        path: '/blogs',
-        element: <Blogs></Blogs>
     },
     {
         path: '*',
