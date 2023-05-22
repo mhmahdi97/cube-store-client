@@ -8,11 +8,11 @@ import Category2Container from './Category2Container';
 const CategoryTab = () => {
     return (
         <div className='mt-16'>
-            <h1 className='text-5xl font-bold text-center mb-12'>Shop by Cubes Category:</h1>
-            <Tabs className='border-2 bg-slate-100'>
+            <h1 className='text-5xl font-bold text-center mb-12'>Shop by Cubes Category</h1>
+            <Tabs className='border-2 bg-slate-100' >
                 <TabList className="flex justify-center 'border-2 mt-3 flex-wrap">
                 
-                <Tab className="text-lg font-medium px-4 py-2 bg-gray-200 rounded-md mr-2 mb-2 cursor-pointer">3x3x3 Category Cube</Tab>
+                <Tab className="text-lg font-medium px-4 py-2 bg-gray-200 rounded-md mr-2 mb-2 cursor-pointer" >3x3x3 Category Cube</Tab>
                 <Tab className="text-lg font-medium px-4 py-2 bg-gray-200 rounded-md mr-2 mb-2 cursor-pointer">2x2x2 Category Cube</Tab>
                 <Tab className="text-lg font-medium px-4 py-2 bg-gray-200 rounded-md mr-2 mb-2 cursor-pointer">4x4x4 Category Cube</Tab>
                 <Tab className="text-lg font-medium px-4 py-2 bg-gray-200 rounded-md mr-2 mb-2 cursor-pointer">5x5x5 Category Cube</Tab>

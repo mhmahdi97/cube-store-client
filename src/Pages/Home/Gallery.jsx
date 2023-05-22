@@ -6,7 +6,7 @@ import cube3 from '../../assets/gallery/cube-3.png';
 const Gallery = () => {
     return (
         <section className="text-gray-600 body-font mt-14">
-            <h1 className='text-5xl text-red-500 text-center font-semibold'>See Our Best Selling Cubes Gallery</h1>
+            <h1 className='text-5xl text-center text-black font-bold'>See Our Best Selling Cubes Gallery</h1>
             <div className="container px-5 py-14 mx-auto flex flex-wrap">
                 <div className="lg:w-2/3 mx-auto">
                 <div className="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">

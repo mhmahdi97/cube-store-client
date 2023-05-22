@@ -20,16 +20,15 @@ const Navbar = () => {
     const navItems = <>
         <li><NavLink to="/">Home</NavLink> </li>
         <li> <NavLink to="/all-cubes">All Cubes</NavLink> </li>
-        
-        
-        <li> <NavLink to="/blogs">Blogs</NavLink> </li>
-        { user?  <>
+        <li> <NavLink to="/blogs">Blogs</NavLink> </li>      
+        { user && <>
             <li> <NavLink to="/my-cubes">My Cubes</NavLink> </li>
             <li> <NavLink to="/add-cube">Add a Cube</NavLink> </li>
             <li><button onClick={handleLogOut}>Log out</button></li>
         </> 
-        : <li> <NavLink to="/login">Login</NavLink> </li>
+        
        }
+      
     </>
     return (
         <div className="navbar h-28 mb-4">
@@ -55,13 +54,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end mr-20">
                 {
-                    user && <>
+                    user ? <>
                         <div className="avatar tooltip tooltip-left" data-tip={user?.displayName ? user.displayName : 'User Name'}>
                             <div className="w-12 rounded-full">
                                 <img src={user?.photoURL ? user.photoURL : avatar} />
                             </div>
                         </div>
                     </>
+                    :  <Link to="/login"> <button className='bg-gray-500 px-3 py-2 rounded-md text-white font-semibold'>Login</button> </Link> 
                 }
             </div>
         </div>

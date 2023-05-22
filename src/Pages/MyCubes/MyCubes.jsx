@@ -29,7 +29,7 @@ const MyCubes = () => {
             <h2 className="text-5xl text-center font-bold mt-8 mb-8">Cube You Have Added:</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    {/* hello */}
+                    
                     {/* head */}
                     <thead>
                         <tr>
