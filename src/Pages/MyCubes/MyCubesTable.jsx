@@ -24,7 +24,7 @@ const MyCubesTable = ({myCube, myCubes, setMyCubes}) => {
             }).then((result) => {
             if (result.isConfirmed) {
                 
-                fetch(`http://localhost:5000/cubes/${_id}`, {
+                fetch(`http://cube-store-five.vercel.app/cubes/${_id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())

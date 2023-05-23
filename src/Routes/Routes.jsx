@@ -33,12 +33,12 @@ const router = createBrowserRouter([
             {
                 path: '/all-cubes',
                 element: <AllCubes></AllCubes>,
-                loader: () => fetch('http://localhost:5000/cubes')
+                loader: () => fetch('http://cube-store-five.vercel.app/cubes')
             },
             {
                 path: '/cubes/:id',
                 element: <PrivateRoutes><CubeDetails></CubeDetails></PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/cubes/${params.id}`)
+                loader: ({params}) => fetch(`http://cube-store-five.vercel.app/cubes/${params.id}`)
             },
             {
                 path: '/my-cubes',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
             {
                 path: '/update-cube/:id',
                 element: <PrivateRoutes> <UpdateCube></UpdateCube> </PrivateRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/cubes/${params.id}`)
+                loader: ({params}) => fetch(`http://cube-store-five.vercel.app/cubes/${params.id}`)
             },
             {
                 path: '/blogs',

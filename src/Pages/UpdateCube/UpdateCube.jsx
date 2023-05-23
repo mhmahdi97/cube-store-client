@@ -42,7 +42,7 @@ const UpdateCube = () => {
 
         console.log(updatedCubeInfo)
 
-         fetch(`http://localhost:5000/cubes/${_id}`, {
+         fetch(`http://cube-store-five.vercel.app/cubes/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -39,7 +39,7 @@ const AddACube = () => {
 
         console.log(cubeInfo)
 
-        fetch('http://localhost:5000/all-cubes', {
+        fetch('http://cube-store-five.vercel.app/all-cubes', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CubeCard from './CubeCard';
 
 const Category5Container = () => {
-   const url = `http://localhost:5000/cubes?category=5x5x5`;
+   const url = `http://cube-store-five.vercel.app/cubes?category=5x5x5`;
     
     const [category2Cards, setcategory5Cards] = useState([]);
 

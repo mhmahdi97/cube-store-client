@@ -14,7 +14,7 @@ const MyCubes = () => {
     console.log(email)
 
 
-    const url = `http://localhost:5000/cubes?sellerEmail=${email}`;
+    const url = `http://cube-store-five.vercel.app/cubes?sellerEmail=${email}`;
 
     const [myCubes, setMyCubes] = useState([]);
 
