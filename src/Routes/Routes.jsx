@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-cubes',
                 element: <AllCubes></AllCubes>,
-                loader: () => fetch('http://cube-store-five.vercel.app/cubes')
+                loader: () => fetch('http://cube-store-five.vercel.app/all-cubes')
             },
             {
                 path: '/cubes/:id',
