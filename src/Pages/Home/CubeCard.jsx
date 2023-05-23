@@ -2,17 +2,17 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthContextProvider';
 import Swal from 'sweetalert2';
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 const CubeCard = ({card}) => {
     const {cubeName, cubeImage1, price, ratings, _id} = card;
     const {user} = useContext(AuthContext);
 
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
+    // useEffect(() => {
+    //     AOS.init();
+    //     AOS.refresh();
+    // }, []);
 
     const handlePrevent = () => {
         if (!user) {
@@ -22,7 +22,7 @@ const CubeCard = ({card}) => {
 
     return (
        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <div data-aos="fade-up" className="block relative h-48 rounded overflow-hidden">
+            <div className="block relative h-48 rounded overflow-hidden">
             <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={cubeImage1} />
             </div>
             <div className="mt-4">
