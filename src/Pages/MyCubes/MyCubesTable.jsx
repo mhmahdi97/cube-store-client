@@ -2,7 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 
-const MyCubesTable = ({myCube, myCubes, setMycubes}) => {
+const MyCubesTable = ({myCube, myCubes, setMyCubes}) => {
 
     const {cubeName, cubeImage1, category, price, sellerName, sellerEmail, ratings, quantity, _id} = myCube;
 
@@ -10,6 +10,7 @@ const MyCubesTable = ({myCube, myCubes, setMycubes}) => {
     
    const handleDelete = _id => {
         console.log(_id)
+        console.log(myCubes)
 
         Swal.fire({
             title: 'Are you sure to delete the cube?',
@@ -35,7 +36,7 @@ const MyCubesTable = ({myCube, myCubes, setMycubes}) => {
                             'success'
                         )
                         const remaining = myCubes.filter(cube => cube._id !== _id)
-                        setMycubes(remaining)
+                        setMyCubes(remaining)
                     }
                 })
                 
