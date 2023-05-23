@@ -54,6 +54,8 @@ const MyCubes = () => {
                        myCubes.map(myCube => <MyCubesTable
                         key={myCube._id}
                         myCube={myCube}
+                        myCubes={myCubes}
+                        setMyCubes={setMyCubes}
                         user={user}
                        ></MyCubesTable>) 
                 

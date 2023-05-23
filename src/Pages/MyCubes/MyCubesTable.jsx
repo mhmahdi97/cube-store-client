@@ -1,9 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const MyCubesTable = ({myCube}) => {
+
+const MyCubesTable = ({myCube, myCubes, setMycubes}) => {
 
     const {cubeName, cubeImage1, category, price, sellerName, sellerEmail, ratings, quantity, _id} = myCube;
+
+
+    
+   const handleDelete = _id => {
+        console.log(_id)
+
+        Swal.fire({
+            title: 'Are you sure to delete the cube?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                
+                fetch(`http://localhost:5000/cubes/${_id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your cube has been deleted.',
+                            'success'
+                        )
+                        const remaining = myCubes.filter(cube => cube._id !== _id)
+                        setMycubes(remaining)
+                    }
+                })
+                
+            }
+        })
+    }
 
     return (
         <tr>
@@ -22,8 +60,8 @@ const MyCubesTable = ({myCube}) => {
             <td className='text-center'>{quantity}</td>
             <td className='text-center'>{sellerName}</td>
             <td className='text-center'>{sellerEmail}</td>
-            <td className='text-center'> <Link to={`/cubes/${_id}`}><button className='bg-gray-500 px-2 py-1 rounded-md text-white'>Update</button></Link> </td>
-            <td className='text-center'> <Link to={`/cubes/${_id}`}><button className='bg-red-500 px-2 py-1 rounded-md text-white'>Delete</button></Link> </td>
+            <td className='text-center'> <button className='bg-gray-500 px-2 py-1 rounded-md text-white'>Update</button></td>
+            <td className='text-center'><button onClick={() => handleDelete(_id)} className='bg-red-500 px-2 py-1 rounded-md text-white'>Delete</button> </td>
         
         </tr>
     );
