@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthContextProvider';
+import Swal from 'sweetalert2';
 
 const UpdateCube = () => {
    useTitle('Cube Store | Update a Cube');
 
    const cube = useLoaderData();
-   const {cubeName, category, price, ratings, cubeImage1, quantity, _id, sellerName, sellerEmail, description} = cube;
+   const {cubeName, category, price, ratings, cubeImage1, quantity, _id, description} = cube;
    console.log(cube)
 
     const {user} = useContext(AuthContext);
@@ -55,7 +56,7 @@ const UpdateCube = () => {
             if (data.modifiedCount) {
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Coffee Updated Successfully!',
+                    text: 'Cube Updated Successfully!',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
