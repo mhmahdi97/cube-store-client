@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
@@ -61,7 +62,9 @@ const MyCubesTable = ({myCube, myCubes, setMyCubes}) => {
             <td className='text-center'>{quantity}</td>
             <td className='text-center'>{sellerName}</td>
             <td className='text-center'>{sellerEmail}</td>
-            <td className='text-center'> <button className='bg-gray-500 px-2 py-1 rounded-md text-white'>Update</button></td>
+            <td className='text-center'> <Link to={`/update-cube/${_id}`} >
+                <button className='bg-gray-500 px-2 py-1 rounded-md text-white'>Update</button>
+                </Link> </td>
             <td className='text-center'><button onClick={() => handleDelete(_id)} className='bg-red-500 px-2 py-1 rounded-md text-white'>Delete</button> </td>
         
         </tr>

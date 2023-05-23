@@ -10,6 +10,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/404/ErrorPage";
 import PrivateRoutes from "./PrivateRoutes";
 import CubeDetails from "../Pages/AllCubes/CubeDetails";
+import UpdateCube from "../Pages/UpdateCube/UpdateCube";
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
             {
                 path: '/add-cube',
                 element: <PrivateRoutes> <AddACube></AddACube> </PrivateRoutes>
+            },
+            {
+                path: '/update-cube/:id',
+                element: <PrivateRoutes> <UpdateCube></UpdateCube> </PrivateRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/cubes/${params.id}`)
             },
             {
                 path: '/blogs',
